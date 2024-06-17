@@ -41,7 +41,7 @@ function App() {
       <Routes>
       <Route path="/" element={<SharedLayout />}>
 					<Route path="/" element={<Landing />} />
-					<Route path="/" element={<Home />} />
+					<Route path="/questions" element={<Home />} />
 					<Route path="/questions/ask" element={<AskQuestion />} />
 					<Route path="/questions/:questionid" element={<Answer />} />
           <Route path="/register" element={<Register/>}></Route>
