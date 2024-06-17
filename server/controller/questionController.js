@@ -66,7 +66,7 @@ async function singleQuestion(req, res) {
 
 		return res
 			.status(StatusCodes.INTERNAL_SERVER_ERROR)
-			.json({ msg: "something went wrong, try again later!" });
+			.json({ msg: "something went wrong, try again later!!" });
 	}
 }
 

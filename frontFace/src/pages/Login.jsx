@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import axios from '../axiosConfig'
 
-function Login({toggle}) {
+function Login({ toggle }) {
   const navigate = useNavigate()
   const emailDom = useRef();
   const passwordDom = useRef();
@@ -35,9 +35,8 @@ function Login({toggle}) {
       alert('login successful')
 
       localStorage.setItem('token', data.token);
-      // navigate('/')
-      console.log(data)
       navigate('/questions')
+      console.log(data)
     } catch (error) {
       alert(error?.response?.data?.msg)
       console.log(error.response.data)
@@ -47,7 +46,7 @@ function Login({toggle}) {
 
   return (
     <>
-<div
+	<div
 				className="w-1/3 mt-10 mb-5 ml-20 text-center bg-white border border-gray-200 rounded-md scroll-smooth">
 			
 				<br />
@@ -57,7 +56,7 @@ function Login({toggle}) {
 					</div>
 
 					<div className="p-1">
-						<span>Didn’t have an account? </span>
+						<span>Don’t have an account? </span>
 
 						<div
 							onClick={() => {

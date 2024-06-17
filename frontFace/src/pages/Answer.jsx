@@ -7,7 +7,7 @@ function AnswerPage() {
 	const { user, setuser } = useContext(AppState);
 	// console.log(user.userid);
 	const token = localStorage.getItem("token");
-	const navigatTo = useNavigate();
+	const navigate = useNavigate();
 	const [ansers, setansers] = useState([]);
 	const [singlequestion, setsinglequestion] = useState({});
 	const { questionid } = useParams();
@@ -62,7 +62,7 @@ function AnswerPage() {
 				}
 			);
 			alert("answer posted");
-			// navigatTo("/questions");
+			navigate("/questions");
 		} catch (error) {
 			console.log(error.response);
 		}
@@ -127,7 +127,7 @@ function AnswerPage() {
 				<input
 					type="text"
 					className="w-4/5 p-3 ml-20 border border-gray-500 rounded-lg bg-gray-50 max-h-30 pb-28 text-align-top"
-					placeholder="your anser..."
+					placeholder="your answer..."
 					ref={answerDom}
 				/>
 			</div>

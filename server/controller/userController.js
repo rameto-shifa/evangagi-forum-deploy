@@ -60,7 +60,7 @@ async function login(req, res) {
 		if (user.length == 0) {
 			return res
 				.status(StatusCodes.BAD_REQUEST)
-				.json({ msg: "invalid credential1" });
+				.json({ msg: "invalid credential" });
 		}
 
 		// compare password
@@ -68,7 +68,7 @@ async function login(req, res) {
 		if (!isMatch) {
 			return res
 				.status(StatusCodes.BAD_REQUEST)
-				.json({ msg: "invalid credential2" });
+				.json({ msg: "invalid credential" });
 		}
 
 		const username = user[0].username;

@@ -31,9 +31,10 @@ async function answerPost(req, res) {
 async function allAnswers(req, res) {
 	// const userid = req.user.userid;
 	const questionid = req.params.questionid;
+
 	try {
 		const [answers] = await dbConnection.query(
-			"select username,answer FROM answers JOIN users ON answers.userid=users.userid Where answers.questionid =? ORDER BY id DESC",
+			"select username,answer FROM answers JOIN users ON answers.userid=users.userid Where answers.questionid =? ORDER BY answerid DESC",
 			[questionid]
 		);
 		if (answers.length == 0) {

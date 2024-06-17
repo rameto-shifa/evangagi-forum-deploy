@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import axios from '../axiosConfig';
 
-        function Register({toggle}) {
+        function Register({ toggle }) {
           const navigate = useNavigate()
     const userNameDom = useRef();
     const firstNameDom = useRef();

@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate} from 'react-router-dom'
 import { useEffect,useState,createContext } from 'react'
 import './App.css'
 import Home from './pages/Home'
+import Register from './pages/Register'
 import Login from './pages/Login'
 import SharedLayout from './components/SharedLayout'
 import Landing from './pages/Landing'
@@ -40,10 +41,11 @@ function App() {
       <Routes>
       <Route path="/" element={<SharedLayout />}>
 					<Route path="/" element={<Landing />} />
-					<Route path="/questions" element={<Home />} />
+					<Route path="/" element={<Home />} />
 					<Route path="/questions/ask" element={<AskQuestion />} />
 					<Route path="/questions/:questionid" element={<Answer />} />
-					<Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register/>}></Route>
+					<Route path="/login" element={<Login />} />
 					<Route path="/*" element={<NotFound />} />
 				</Route>
       </Routes>
