@@ -20,11 +20,11 @@ function Auth() {
 	}
 
 	const classToggle = animate ? "spin" : "none";
-	const emailNameDom = useRef(null);
-	const passWordDom = useRef(null);
-	const userNameDom = useRef(null);
-	const firstNameDom = useRef(null);
-	const lastNameDom = useRef(null);
+	const emailNameDom = useRef();
+	const passWordDom = useRef();
+	const userNameDom = useRef();
+	const firstNameDom = useRef();
+	const lastNameDom = useRef();
 
 	const [show, setshow] = useState(false);
 
