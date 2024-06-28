@@ -7,19 +7,6 @@ function Login({ toggle }) {
   const emailDom = useRef();
   const passwordDom = useRef();
   const [show, setshow] = useState(false);
-  const [login, setlogin] = useState(true);
-	const [animate, setanimate] = useState(false);
-
-  async function loginToggle() {
-	setTimeout(
-		() => {
-			setanimate((animate) => !animate);
-		},
-		500,
-
-		setlogin((login) => !login)
-	);
-}
 
   function handlePassword() {
 		if (!show) {
@@ -30,7 +17,7 @@ function Login({ toggle }) {
 	}
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     const emailValue = emailDom.current.value;
     const passwordValue = passwordDom.current.value;
@@ -59,10 +46,9 @@ function Login({ toggle }) {
 
   return (
     <>
-	<div
-				className="w-1/3 mt-10 mb-5 ml-20 text-center bg-white border border-gray-200 rounded-md scroll-smooth">
+	<div className="flex justify-around bg-slate-50 bg-[url('https://forum.ibrodev.com/bg-svg-f.svg')]  bg-no-repeat bg-cover pb-5 ">
+	        <div className="w-1/3 mt-10 mb-5 ml-20 text-center bg-white border border-gray-200 rounded-md scroll-smooth">
 			
-				<br />
 				<div className="w-full px-5">
 					<div className="px-5 text-2xl text-center">
 						Login to your account
@@ -72,7 +58,9 @@ function Login({ toggle }) {
 						<span>Don’t have an account? </span>
 
 						<div
-							onClick={loginToggle}
+							onClick={() => {
+								toggle(false);
+							}}
 							className="text-red-400 hover:cursor-pointer touch-pan-right"
 						>
 							Create a new account
@@ -88,7 +76,6 @@ function Login({ toggle }) {
 								placeholder="email"
 								ref={emailDom}
 							/>
-							<br />
 						</div>
 						<div className="flex justify-between mb-6">
 							<input
@@ -157,7 +144,39 @@ function Login({ toggle }) {
 						</div>
 					</form>
 				</div>
+			</div>
+			<div className="w-1/2 mt-10 ">
+				<h3 className="text-xl text-orange-500">About</h3>
+				<h1 className="text-4xl text-blue-950">Evangadi Networks</h1>
 				<br />
+				<p className="pb-4 text-lg">
+					No matter what stage of life you are in, whether you’re just starting
+					elementary school or being promoted to CEO of a Fortune 500 company,
+					you have much to offer to those who are trying to follow in your
+					footsteps.
+				</p>
+				<p className="pb-4 text-lg">
+					At Evangadi Forum, we believe in the power of collaboration,
+					inspiration, and growth. We've created a space where like-minded
+					individuals come together to share experiences, ideas, and support one
+					another on our unique journeys.
+				</p>
+
+				<p className="text-lg v">
+					Wheather you are willing to share your knowledge or you are just
+					looking to meet mentors of your own, please start by joining the
+					network here.
+				</p>
+
+				<div className="mt-5">
+					<a
+						href="#"
+						className="inline-block px-8 py-2 mt-4 mr-10 text-lg leading-none text-white bg-orange-400 border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-orange-700 lg:mt-0"
+					>
+						HOW IT WORKS
+					</a>
+				</div>
+			</div>
 			</div>
     </>
   )
