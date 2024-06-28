@@ -53,6 +53,7 @@ import axios from '../axiosConfig';
 
   return (
     <>
+	<div className="flex justify-around bg-slate-50 bg-[url('https://forum.ibrodev.com/bg-svg-f.svg')]  bg-no-repeat bg-cover pb-5 ">
     <div className="w-1/3 p-2 mt-10 mb-5 ml-20 border border-gray-200 rounded-md bg-zinc-100 max-h-90">
     <h1 className="text-2xl text-center">create account</h1>
       <form onSubmit={handleSubmit} className="px-8 pt-6 pb-10 rounded ">
@@ -136,6 +137,39 @@ import axios from '../axiosConfig';
 					</div>
       </form>
     </div>
+	<div className="w-1/2 mt-10 ">
+				<h3 className="text-xl text-orange-500">About</h3>
+				<h1 className="text-4xl text-blue-950">Evangadi Networks</h1>
+				<br />
+				<p className="pb-4 text-lg">
+					No matter what stage of life you are in, whether you’re just starting
+					elementary school or being promoted to CEO of a Fortune 500 company,
+					you have much to offer to those who are trying to follow in your
+					footsteps.
+				</p>
+				<p className="pb-4 text-lg">
+					At Evangadi Forum, we believe in the power of collaboration,
+					inspiration, and growth. We've created a space where like-minded
+					individuals come together to share experiences, ideas, and support one
+					another on our unique journeys.
+				</p>
+
+				<p className="text-lg v">
+					Wheather you are willing to share your knowledge or you are just
+					looking to meet mentors of your own, please start by joining the
+					network here.
+				</p>
+
+				<div className="mt-5">
+					<a
+						href="#"
+						className="inline-block px-8 py-2 mt-4 mr-10 text-lg leading-none text-white bg-orange-400 border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-orange-700 lg:mt-0"
+					>
+						HOW IT WORKS
+					</a>
+				</div>
+			</div>
+			</div>
     </>
   )
 }

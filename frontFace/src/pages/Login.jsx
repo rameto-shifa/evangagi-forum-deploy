@@ -2,11 +2,24 @@ import { useRef, useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import axios from '../axiosConfig'
 
-function Login({ toggle }) {
+function Login() {
   const navigate = useNavigate()
   const emailDom = useRef();
   const passwordDom = useRef();
   const [show, setshow] = useState(false);
+  const [login, setlogin] = useState(true);
+	const [animate, setanimate] = useState(false);
+
+	async function loginToggle() {
+		setTimeout(
+			() => {
+				setanimate((animate) => !animate);
+			},
+			500,
+
+			setlogin((login) => !login)
+		);
+	}
 
   function handlePassword() {
 		if (!show) {
@@ -58,9 +71,7 @@ function Login({ toggle }) {
 						<span>Don’t have an account? </span>
 
 						<div
-							onClick={() => {
-								toggle(false);
-							}}
+							onClick={loginToggle}
 							className="text-red-400 hover:cursor-pointer touch-pan-right"
 						>
 							Create a new account
