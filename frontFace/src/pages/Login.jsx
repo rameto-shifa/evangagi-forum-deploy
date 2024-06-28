@@ -7,19 +7,6 @@ function Login() {
   const emailDom = useRef();
   const passwordDom = useRef();
   const [show, setshow] = useState(false);
-  const [login, setlogin] = useState(true);
-	const [animate, setanimate] = useState(false);
-
-	async function loginToggle() {
-		setTimeout(
-			() => {
-				setanimate((animate) => !animate);
-			},
-			500,
-
-			setlogin((login) => !login)
-		);
-	}
 
   function handlePassword() {
 		if (!show) {
@@ -71,10 +58,9 @@ function Login() {
 						<span>Don’t have an account? </span>
 
 						<div
-							onClick={loginToggle}
 							className="text-red-400 hover:cursor-pointer touch-pan-right"
 						>
-							Create a new account
+						<Link to={"/register"}>Create a new account</Link>
 						</div>
 					</div>
 					<form onSubmit={handleSubmit} className="px-4 pt-6 pb-4 mb-4 rounded ">
