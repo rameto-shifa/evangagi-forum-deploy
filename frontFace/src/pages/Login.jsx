@@ -7,6 +7,19 @@ function Login({ toggle }) {
   const emailDom = useRef();
   const passwordDom = useRef();
   const [show, setshow] = useState(false);
+  const [login, setlogin] = useState(true);
+	const [animate, setanimate] = useState(false);
+
+  async function loginToggle() {
+	setTimeout(
+		() => {
+			setanimate((animate) => !animate);
+		},
+		500,
+
+		setlogin((login) => !login)
+	);
+}
 
   function handlePassword() {
 		if (!show) {
@@ -17,7 +30,7 @@ function Login({ toggle }) {
 	}
 
   async function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     const emailValue = emailDom.current.value;
     const passwordValue = passwordDom.current.value;
@@ -59,9 +72,7 @@ function Login({ toggle }) {
 						<span>Don’t have an account? </span>
 
 						<div
-							onClick={() => {
-								toggle(false);
-							}}
+							onClick={loginToggle}
 							className="text-red-400 hover:cursor-pointer touch-pan-right"
 						>
 							Create a new account
