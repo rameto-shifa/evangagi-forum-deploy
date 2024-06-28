@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import axios from '../axiosConfig';
 
-        function Register({ toggle }) {
+        function Register() {
           const navigate = useNavigate()
     const userNameDom = useRef();
     const firstNameDom = useRef();
@@ -128,11 +128,10 @@ import axios from '../axiosConfig';
 							Register
 						</button>
 						<button
-							onClick={() => toggle(true)}
 							className="px-6 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
 							type="button"
 						>
-							I have account
+						<Link to={"/login"}>I have account</Link>
 						</button>
 					</div>
       </form>
