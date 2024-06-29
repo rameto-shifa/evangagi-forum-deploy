@@ -4,7 +4,7 @@ import axios from "../axiosConfig";
 import { Link } from "react-router-dom";
 
 function Home() {
-	const { user, setuser } = useContext(AppState);
+	const {user} = useContext(AppState);
 	const [questionList, setQuestionList] = useState([]);
 	const token = localStorage.getItem("token");
 	async function fetchAllQuestions() {
@@ -46,7 +46,7 @@ function Home() {
 			</div>
 			<hr />
 
-			<div className="w-4/5 pt-8 pb-20 pr-20 mt-5 ml-20 overflow-y-scroll bg-white  max-h-80">
+			<div className="w-4/5 pt-8 pb-20 pr-20 mt-5 ml-20 overflow-y-scroll bg-white max-h-80">
 				{questionList?.map((single, i) => {
 					let y = (
 						<>
